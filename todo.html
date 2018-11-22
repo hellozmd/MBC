@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test1</title>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/todo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <style>
+        @media screen and (min-width: 375px) {
+            .userInfoSize {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .userInfoSize {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+
+<body style="text-align:center;">
+    <div data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>Todo</h1>
+            <div class="moreMenu">
+                <img src="images/more.png" class="menuIcon">
+            </div>
+        </div>
+
+        <div class="contentBody">
+            <div class="userInfoList" data-bind="foreach:{data: userInfoList, as: 'userInfo'}">
+                <div class="userInfo userInfoSize">
+                        <div class="showDetail">
+                                <div class="arrowIcon">></div>
+                            </div>
+                    <div class="tag">
+                        <div class="infoValue" data-bind="text: userInfo.id">
+                        </div>
+                        <div class="infoKey">
+                            <div class="dateIcon">
+                                <img src="images/dataIcon.png" style="width:100%;height:AUTO;">
+                            </div>
+                            <div style="float: left;" data-bind="text: userInfo.date"></div>
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <div class="userStatus" style="border-radius: 0.3em;padding: 5px;" data-bind="text: userInfo.status">
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <div class="infoKey">
+                            Total Amount
+                        </div>
+                        <div class="infoValue" data-bind="text: userInfo.totalAmount">
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <div class="infoKey">
+                            Unbudgeted
+                        </div>
+                        <div class="infoValue" data-bind="text: userInfo.unbudgeted">
+                        </div>
+                    </div>
+                   
+                    <div class="tag">
+                        <div class="infoKey">
+                            Applicant
+                        </div>
+                        <div class="infoValue" data-bind="text: userInfo.applicant">
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <div class="infoKey">
+                            Revenve Mode
+                        </div>
+                        <div class="infoValue" data-bind="text: userInfo.revenueMode">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="footBar">
+            <div class="pageBar">
+                <div class="pageTag">
+
+                    <img class="pageIcon" src="images/todo.png">
+                    <div style="color:rgba(57, 97, 182, 0.986)">Todo</div>
+                    <!-- <span class="glyphicon glyphicon-th-large">Todo</span> -->
+                </div>
+                <div class="pageTag">
+                    <img class="pageIcon" src="images/approval.png">
+                    <div style="color: rgb(145, 145, 145);">Approval</div>
+                </div>
+                <div class="pageTag">
+                    <img class="pageIcon" src="images/me.png">
+                    <div style="color: rgb(155, 155, 155);">Me</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var viewModel = {
+            userInfoList: ko.observableArray(
+                [
+                    { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" },
+                    { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" },
+                    { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" },
+                    { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" }
+                ]
+            )
+        };
+        ko.applyBindings(viewModel);
+
+    </script>
+</body>
+
+</html>
