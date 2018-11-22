@@ -1,0 +1,126 @@
+
+        body {
+            width: 100%;
+            margin: auto;
+        }
+
+        .headBar {
+            background-color:rgb(68, 122, 202);
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .headSize {
+            font-size: 2em;
+            width: 100%;
+            height: 7%;
+        }
+
+        .headText {
+            width: 70%;
+            color: #ffffff;
+        }
+
+        .titleText {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .footBar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            /* height: 50px; */
+            background: #ebebeb;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        .pageTag {
+            text-align: center;
+            /* float: left; */
+            width: 32%;
+            height: 100%;
+            display: inline-block;
+        }
+
+        .contentBody {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(247, 245, 245);
+            overflow:scroll;
+            padding-bottom: 50px;
+        }
+
+        .userInfoList {
+            margin: 0 auto;
+            width: 94%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .userInfo {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: row;
+            flex-flow: wrap;
+            margin-top: 2%;
+            margin-bottom: 1%;
+            text-align: left;
+            border-left-style: solid;
+            border-left-width: 0.4em;
+            border-left-color: red;
+            border-radius: 0.3em;
+            box-shadow: 0.1em 0.1em 0.3em #888888;
+        }
+
+        .tag {
+            box-sizing:border-box;
+            /* font-size: 1.3em; */
+            padding: 3% 0 2% 2%;
+            margin:0 2% 0 2%;
+            width: 45%;
+            height: 33%;
+            /* float: left; */
+        }
+
+        .arrowIcon {
+            width: 10%; 
+            height: auto; 
+            display: flex;
+            align-items: center; 
+            font-size: 1.5em;
+            color: rgb(212, 206, 206); 
+            flex-flow: row-reverse;
+        }
+
+        .infoKey {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1.3em;
+            word-wrap: break-word;
+        }
+
+        .infoValue {
+            font-size: 0.5em;
+            color: #585656a4;
+        }
+
+        .userStatus {
+            float:right;
+            background-color: rgb(48, 145, 201);
+            font-size: 0.1em;
+            border-radius: 1em;
+            color:white;
+        }
+
+        .pageIcon {
+            width: 20%;
+        }

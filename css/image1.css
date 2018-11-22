@@ -1,0 +1,20 @@
+
+    .dateIcon {
+        float: left;
+        width: 13px;
+        height: 13px;
+    }
+
+    .moreMenu {
+        display: flex;
+        flex-flow: row-reverse;
+        align-content: center;
+        justify-content: center;
+        width: 10%;
+        height: 100%;
+    }
+
+    .menuIcon {
+        width: 100%;
+        height: auto;
+    }
