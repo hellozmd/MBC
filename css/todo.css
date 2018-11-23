@@ -86,7 +86,7 @@
             box-shadow: 0.1em 0.1em 0.3em #888888;
         }
 
-        .tag {
+        infoTag {
             box-sizing:border-box;
             /* font-size: 1.3em; */
             padding: 3% 0 2% 2%;

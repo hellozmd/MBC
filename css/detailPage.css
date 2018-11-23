@@ -16,9 +16,52 @@
         height: auto;
     }
 
+    .contentBody {
+    }
+
+    .infoContainer {
+        background-color: white;
+        padding: 10px 10px 5px 10px;
+        margin-bottom: 10px;
+    }
+
     .infoHead {
+    }
+
+    .infoFoot {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .leftInterval {
+        padding-left: 8px;
+    }
+
+    .infoBorderLine {
+        margin-left: 5px;
+    }
+
+    .topLine {
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: rgb(212, 209, 209);
+        padding-top: 5px;
+    }
+
+    .bottomLine {
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: rgb(212, 209, 209);
+        padding-bottom: 5px;
+    }
+
+    .infoHeadTitle {
         border-left-style: solid;
         border-left-width: 5px;
         border-left-color: #2370e2;
-        margin-bottom: 10px;
+    }
+
+    .budgetDetail {
+        display: flex;
+        justify-content: space-between;
     }
