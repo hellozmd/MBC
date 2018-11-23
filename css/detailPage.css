@@ -21,17 +21,24 @@
 
     .infoContainer {
         background-color: white;
-        padding: 10px 10px 5px 10px;
+        padding: 0 10px 5px 0;
         margin-bottom: 10px;
     }
 
     .infoHead {
+        padding-top:10px;
+        padding-bottom: 10px;
+    }
+
+    .infoContent {
+        padding: 5px 0 5px 13px;
     }
 
     .infoFoot {
         display: flex;
         flex-direction: row-reverse;
     }
+
 
     .leftInterval {
         padding-left: 8px;
@@ -45,14 +52,14 @@
         border-top-style: solid;
         border-top-width: 1px;
         border-top-color: rgb(212, 209, 209);
-        padding-top: 5px;
+        padding-top: 10px;
     }
 
     .bottomLine {
         border-bottom-style: solid;
         border-bottom-width: 1px;
         border-bottom-color: rgb(212, 209, 209);
-        padding-bottom: 5px;
+        padding-bottom: 10px;
     }
 
     .infoHeadTitle {
@@ -61,7 +68,59 @@
         border-left-color: #2370e2;
     }
 
+    .basicInfoDtl {        
+        padding-top: 12px;
+    }
+
     .budgetDetail {
+        padding-top: 3px;
         display: flex;
         justify-content: space-between;
+    }
+
+    .docTab {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .docInfo {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .docIconBox {
+        width: 50px;
+        height: 100%;
+    }
+
+    .docIcon {
+        width: 100%;
+        height: auto;
+    }
+
+    .downloadBox {
+        padding-right: 15px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .downloadIcon {
+        width: 100%;
+        height: auto;
+    }
+
+
+
+
+    .infoKey {
+        font-size: 0.5em;
+        color: #585656a4;
+    }
+
+    .infoValue {
+        font-size: 1em;
+        word-wrap: break-word;
     }
