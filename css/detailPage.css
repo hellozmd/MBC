@@ -1,13 +1,13 @@
 
     .headerBGC {
-        background: blue !important;
+        background: #0982FE !important;
     }
 
     .returnBtn {
         position: absolute;
-        width: 24px;
+        width: 40px;
         left: 10px;
-        top: 6px;
+        bottom: 1px;
     }
 
     .returnIcon {
@@ -37,6 +37,23 @@
     .infoFoot {
         display: flex;
         flex-direction: row-reverse;
+    }
+
+    .showMore {
+        position: relative;
+        text-align: center;
+        bottom: 2.5px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .moreIcon {
+        width: 100%;
+        height: auto;
+    }
+
+    .showMoreInfo {
+        color: rgb(06, 123, 255);
     }
 
 
@@ -69,13 +86,17 @@
     }
 
     .basicInfoDtl {        
-        padding-top: 12px;
+        padding-top: 10px;
     }
 
     .budgetDetail {
-        padding-top: 3px;
+        padding-top: 4px;
         display: flex;
         justify-content: space-between;
+    }
+
+    .budgetNumber {
+        color: rgb(06, 123, 255);
     }
 
     .docTab {
@@ -112,15 +133,21 @@
         height: auto;
     }
 
+    .docFootOffset {
+        position: relative;
+        bottom: 6px;
+        ;
+    }
 
 
 
-    .infoKey {
-        font-size: 0.5em;
+
+    .attrKey {
+        font-size: 0.7em;
         color: #585656a4;
     }
 
-    .infoValue {
+    .attrValue {
         font-size: 1em;
         word-wrap: break-word;
     }

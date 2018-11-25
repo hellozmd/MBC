@@ -20,7 +20,7 @@
             <h2>OLR</h2>
         </div>
     </div> -->
-    <div data-role="page">
+    <div data-role="page" id="detailPage">
         <div data-role="header" class="headerBGC" data-position="fixed">
             <div class="returnBtn">
                 <img src="images/approval.png" class="returnIcon">
@@ -36,20 +36,20 @@
                 </div>
                 <div class="infoContent leftInterval infoBorderLine">
                     <div class="basicInfoDtl">
-                        <div class="applicant infoKey">Applicant</div>
-                        <div class="applicant infoValue" data-bind="text: basicInfo().applicant">1</div>
+                        <div class="applicant attrKey">Applicant</div>
+                        <div class="applicant attrValue" data-bind="text: basicInfo().applicant">1</div>
                     </div>
                     <div class="basicInfoDtl">
-                        <div class="assetType infoKey">Asset Type</div>
-                        <div class="assetType infoValue" data-bind="text: basicInfo().assetType">2</div>
+                        <div class="assetType attrKey">Asset Type</div>
+                        <div class="assetType attrValue" data-bind="text: basicInfo().assetType">2</div>
                     </div>
                     <div class="basicInfoDtl">
-                        <div class="companyName infoKey">Company Name</div>
-                        <div class="companyName infoValue" data-bind="text: basicInfo().companyName">3</div>
+                        <div class="companyName attrKey">Company Name</div>
+                        <div class="companyName attrValue" data-bind="text: basicInfo().companyName">3</div>
                     </div>
                     <div class="basicInfoDtl">
-                        <div class="desc infoKey">Description</div>
-                        <div class="desc infoValue" data-bind="text: basicInfo().description">4</div>
+                        <div class="desc attrKey">Description</div>
+                        <div class="desc attrValue" data-bind="text: basicInfo().description">4</div>
                     </div>
                 </div>
                 <div class="infoFoot topLine">
@@ -70,19 +70,19 @@
                 </div>
                 <div class="infoContent leftInterval infoBorderLine">
                     <div class="budgetDetail">
-                        <div class="infoKey">Total Lease Commitment</div>
+                        <div class="attrKey">Total Lease Commitment</div>
                         <div data-bind="text: bargeted().totalCommitment">--</div>
                     </div>
                     <div class="budgetDetail">
-                        <div class="infoKey">Previous application(s)</div>
+                        <div class="attrKey">Previous application(s)</div>
                         <div data-bind="text: bargeted().PreApplication">--</div>
                     </div>
                     <div class="budgetDetail">
-                        <div class="infoKey">This Application</div>
+                        <div class="attrKey">This Application</div>
                         <div data-bind="text: bargeted().thisApplication">--</div>
                     </div>
                     <div class="budgetDetail">
-                        <div class="infoKey">Budget Variance</div>
+                        <div class="attrKey">Budget Variance</div>
                         <div data-bind="text: bargeted().budgetVariance">--</div>
                     </div>
                 </div>
@@ -109,9 +109,8 @@
                                 <img src="images/DOC.png" class="docIcon">
                             </div>
                             <div>
-                                <div class="docName infoValue" data-bind="text: docName"></div>
-                                <div class="docID infoKey" data-bind="text: docID"></div>
-                                <div class="docID infoKey" data-bind="text: arrayLength"></div>
+                                <div class="docName attrValue" data-bind="text: docName"></div>
+                                <div class="docID attrKey" data-bind="text: docID"></div>
                             </div>
                         </div>
                         <div class="downloadBox">
@@ -121,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="infoFoot topLine">
+                <div class="infoFoot topLine docFootOffset">
                     <div>
                         >
                     </div>
@@ -150,10 +149,7 @@
                 { docIcon: "doc.png", docName: "A4_CER1101.doc", docID: "A4 CER1101" },
                 { docIcon: "doc.png", docName: "A4_OLR 1101.doc", docID: "A4 OLR 1101" }
             ]);
-            
-            self.arrayLength = ko.computed(function() {
-                return self.supportingDoc.length;
-            }, this);
+        
 
         }
         var dtlViewModel = new DtlViewModel();

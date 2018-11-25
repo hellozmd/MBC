@@ -1,12 +1,7 @@
 
-        body {
-            width: 100%;
-            margin: auto;
-        }
 
         .headBar {
-            background-color:rgb(68, 122, 202) !important;
-            position: fixed;
+            background: #0982FE !important;
         }
 
         .headText {
@@ -38,12 +33,7 @@
         }
 
         .footBar {
-            /* position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 50px;
-            background: #ebebeb;
-            align-items: center; */
+            background: #F8F8F9 !important;
             display: flex;
             flex-flow: row;
             justify-content: space-between;
@@ -52,6 +42,15 @@
         .pageTag {
             text-align: center;
             display: inline-block;
+        }
+
+        .pageName {
+            text-shadow: 0 1px 0 #fff;
+            color: rgb(185, 181, 181);
+        }
+
+        .selectedPage {
+            color: rgb(06, 123, 255) !important;
         }
 
         .contentBody {
@@ -73,6 +72,7 @@
             display: flex;
             flex-direction: row;
             flex-flow: wrap;
+            position: relative;
             margin-top: 2%;
             margin-bottom: 1%;
             text-align: left;
@@ -94,13 +94,13 @@
         }
 
         .showDetail {
-            position: relative;
-            left: 93%;
-            top: 45%;
+            position: absolute;
+            right: 5px;
+            top: 40%;
         }
 
         .enterDetail {
-            position: absolute;
+            /*position: absolute;*/
         }
 
         .arrowIcon {

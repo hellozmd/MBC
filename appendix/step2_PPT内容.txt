@@ -1,0 +1,14 @@
+
+1. 使用JQM的header和footer组件，并且模仿它的写法 position absolute + relative
+2. 重构： position absolute + relative
+3. ko 数据绑定： model针对某个对象， 监听对象并且-----能用图表现吗？
+4. JQM页面内的路由->data role="page"， on监听click事件并且调用location.href
+5. 组件的构建：   使用flex弹性布局来实现， 组合性的弹性布局
+6. 实现和虚线的构成方式
+
+
+学到的知识：   	1.  JQM如何重新绘制基础组件
+		2. JQM的布局方式， 使用相对和绝对以及..
+		3. MVVM（图文？）和knockout数据绑定的好处 + 可以和之前对比
+
+做好PPT之后请检查自己当前的问题！！！
