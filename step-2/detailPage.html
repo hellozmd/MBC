@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div data-role="page" id="detailPage" data-transition="flip">
+    <link rel="stylesheet" href="css/detailPage.css">
+        <div data-role="header" class="detailHeader" data-position="fixed">
+            <div class="returnBtn">
+                <a href="#todoPage" data-transition="slide" data-direction="reverse">
+                    <img src="images/backIcon.png" class="returnIcon">
+                </a>
+            </div>
+            <h1>OLR2018-0074</h1>
+        </div>
+        <div class="contentBody">
+            <div class="infoContainer">
+                <div class="infoHead bottomLine">
+                    <div class="infoHeadTitle leftInterval">
+                        Basic Info
+                    </div>
+                </div>
+                <div class="infoContent leftInterval infoBorderLine">
+                    <div class="basicInfoDtl">
+                        <div class="applicant attrKey">Applicant</div>
+                        <div class="applicant attrValue" data-bind="text: basicInfo().applicant">1</div>
+                    </div>
+                    <div class="basicInfoDtl">
+                        <div class="assetType attrKey">Asset Type</div>
+                        <div class="assetType attrValue" data-bind="text: basicInfo().assetType">2</div>
+                    </div>
+                    <div class="basicInfoDtl">
+                        <div class="companyName attrKey">Company Name</div>
+                        <div class="companyName attrValue" data-bind="text: basicInfo().companyName">3</div>
+                    </div>
+                    <div class="basicInfoDtl">
+                        <div class="desc attrKey">Description</div>
+                        <div class="desc attrValue" data-bind="text: basicInfo().description">4</div>
+                    </div>
+                </div>
+                <div class="infoFoot topLine">
+                    <div class="showMore">
+                        <img src="images/enter.png" class="moreIcon">
+                    </div>
+                    <div class="showMoreInfo">
+                        More
+                    </div>
+                </div>
+            </div>
+
+            <div class="infoContainer">
+                <div class="infoHead bottomLine">
+                    <div class="infoHeadTitle leftInterval">
+                        Have Bargeted
+                    </div>
+                </div>
+                <div class="infoContent leftInterval infoBorderLine">
+                    <div class="budgetDetail">
+                        <div class="attrKey">Total Lease Commitment</div>
+                        <div data-bind="">
+                            <div data-bind="text: judgeBargetValue(bargeted().totalCommitment), style: {color: judgeBargetColor(bargeted().totalCommitment)}"></div>
+                        </div>
+                    </div>
+                    <div class="budgetDetail">
+                        <div class="attrKey">Previous application(s)</div>
+                        <div data-bind="text: judgeBargetValue(bargeted().PreApplication), style: {color: judgeBargetColor(bargeted().PreApplication)}"
+                            class="budgetNumber"></div>
+                    </div>
+                    <div class="budgetDetail">
+                        <div class="attrKey">This Application</div>
+                        <div data-bind="text: judgeBargetValue(bargeted().thisApplication), style: {color: judgeBargetColor(bargeted().thisApplication)}"
+                            class="budgetNumber"></div>
+                    </div>
+                    <div class="budgetDetail">
+                        <div class="attrKey">Budget Variance</div>
+                        <div data-bind="text: judgeBargetValue(bargeted().budgetVariance), style: {color: judgeBargetColor(bargeted().budgetVariance)}"
+                            class="budgetNumber"></div>
+                    </div>
+                </div>
+                <div class="infoFoot topLine">
+                    <div class="showMore">
+                        <img src="images/enter.png" class="moreIcon">
+                    </div>
+                    <div class="showMoreInfo">
+                        More
+                    </div>
+                </div>
+            </div>
+
+            <div class="infoContainer">
+                <div class="infoHead bottomLine">
+                    <div class="infoHeadTitle leftInterval">
+                        Supporting Document
+                    </div>
+                </div>
+                <div class="infoContent docList leftInterval infoBorderLine" data-bind="foreach: supportingDoc">
+                    <div class="docTab bottomLine">
+                        <div class="docInfo">
+                            <div class="docIconBox">
+                                <img src="images/DOC.png" class="docIcon">
+                            </div>
+                            <div>
+                                <div class="docName attrValue" data-bind="text: docName"></div>
+                                <div class="docID attrKey" data-bind="text: docID"></div>
+                            </div>
+                        </div>
+                        <div class="downloadBox">
+                            <div>
+                                <img src="images/DOWNLOAD.png" class="downloadIcon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="infoFoot topLine docFootOffset">
+                    <div class="showMore">
+                        <img src="images/enter.png" class="moreIcon">
+                    </div>
+                    <div class="showMoreInfo">
+                        More
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function DtlViewModel() {
+            var self = this;
+            self.basicInfo = ko.observable(
+                {
+                    applicant: "GLADYS CHIU", assetType: "OLL warehouses, depots, trucks & others",
+                    companyName: "Gold Talent Business Consultion (Shanghai)", description: "Subject: ${FORM_TYPE} Form Number"
+                }
+            );
+            self.bargeted = ko.observable(
+                { totalCommitment: "", PreApplication: "", thisApplication: "$123456789", budgetVariance: "" }
+            );
+            self.supportingDoc = ko.observableArray([
+                { docIcon: "doc.png", docName: "A4_CER1101.doc", docID: "A4 CER1101" },
+                { docIcon: "doc.png", docName: "A4_OLR 1101.doc", docID: "A4 OLR 1101" }
+            ]);
+            self.judgeBargetValue = function (barget) {
+                return barget === '' ? '--' : barget;
+            }
+            self.judgeBargetColor = function (barget) {
+                return barget === '' ? 'black' : '067BFF';
+            }
+
+        }
+        var dtlViewModel = new DtlViewModel();
+        ko.applyBindings(dtlViewModel, document.getElementById('detailPage'));
+    </script>
+</body>
+
+</html>
