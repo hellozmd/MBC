@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/todo.css">
     <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="./framework7-icons-master/css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="my-app.css">
     <!-- <link rel="stylesheet" href="css/detailPage.css"> -->
@@ -31,56 +32,52 @@
 </head>
 
 <body>
-    <div id="todoPage">
+    <div id="app">
         <div class="statusbar"></div>
 
         <div class="view view-main">
-            <div data-name="home" class="page">
+            <div data-name="home" class="page" id="todoPage">
                 <div class="navbar navbarColor">
                     <div class="navbar-inner">
                         <div class="left">
-                            <a href="/about/" class="link">about us</a>
                         </div>
-                        <div class="title">todo</div>
+                        <div class="title">Todo</div>
                         <div class="right">
                             <a class="link" href="#">
-                                <img src="images/more.png" class="menuIcon">
+                                <i class="icon f7-icons color-white ios-only">menu</i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-
-                <div class="toolbar">
+                <div class="toolbar tabbar-labels">
                     <div class="toolbar-inner">
-                        <div class="pageTag">
-                            <div class="pageIconBox">
-                                <img class="pageIcon" src="images/todo.png">
-                            </div>
-                            <div class="pageName selectedPage">Todo</div>
-                            <!-- <span class="glyphicon glyphicon-th-large">Todo</span> -->
-                        </div>
-                        <div class="pageTag">
-                            <div class="pageIconBox">
-                                <img class="pageIcon" src="images/approval.png">
-                            </div>
-                            <div class="pageName">Approval</div>
-                        </div>
-                        <div class="pageTag">
-                            <div class="pageIconBox">
-                                <img class="pageIcon" src="images/me.png">
-                            </div>
-                            <div class="pageName">Me</div>
-                        </div>
+                        <a href="#tab-1" class="tab-link tab-link-active">
+                            <!-- Different icons for iOS and MD themes -->
+                            <i class="icon f7-icons ios-only">data_fill</i>
+                            <i class="icon material-icons md-only">data</i>
+                            <!-- Label text -->
+                            <span class="tabbar-label no-shadow">todo</span>
+                        </a>
+                        <a href="#tab-2" class="tab-link">
+                            <i class="icon f7-icons ios-only">favorites</i>
+                            <span class="tabbar-label no-shadow">approved</span>
+                        </a>
+                        <a href="#tab-3" class="tab-link">
+                            <i class="icon f7-icons ios-only">person_fill</i>
+                            <i class="icon material-icons md-only">person</i>
+                            <span class="tabbar-label no-shadow">me</span>
+                        </a>
                     </div>
                 </div>
-                <div class="page-content">
-                    <div class="userInfoList" data-bind="foreach:{data: userInfoList, as: 'userInfo'}">
-
-                        <!-- <div class="block"> -->
-                            <a href="/about/">
-                            <div class="userInfo userInfoSize">
-                                <!-- <a href="#detailPage" data-transition="slidefade"> -->
+                <div class="page-content ptr-content infinite-scroll-content" data-ptr-distance="55">
+                    <div class="ptr-preloader">
+                        <div class="preloader"></div>
+                        <div class="ptr-arrow"></div>
+                    </div>
+                    <div class="cards cardsScrollable" data-bind="foreach:{data: userInfoList, as: 'userInfo'}">
+                        <div class="card" data-bind="click: $parent.showDetailPage(userInfo.id)">
+                            <div class="card-content userInfo">
                                 <div class="showDetail">
                                     <div class="enterDetail">
                                         <img src="images/enter.png" class="arrowIcon">
@@ -90,8 +87,8 @@
                                     <div class="infoValue" data-bind="text: userInfo.id">
                                     </div>
                                     <div class="infoKey">
-                                        <div class="dateIcon">
-                                            <img src="images/dataIcon.png" style="width:100%;height:AUTO;">
+                                        <div class="dateIconBox">
+                                            <img src="images/dataIcon.png" class="dateIcon">
                                         </div>
                                         <div style="float: left;" data-bind="text: userInfo.date"></div>
                                     </div>
@@ -114,7 +111,6 @@
                                     <div class="infoValue" data-bind="text: userInfo.unbudgeted">
                                     </div>
                                 </div>
-
                                 <div class="infoTag">
                                     <div class="infoKey">
                                         Applicant
@@ -130,16 +126,23 @@
                                     </div>
                                 </div>
 
-                                <!-- </a> -->
-                            <!-- </div> -->
+                            </div>
                         </div>
-                        </a>
                     </div>
-                </div>
 
+
+
+
+                    
+                    <div class="preloader infinite-scroll-preloader"></div>
+
+
+
+
+
+                </div>
             </div>
         </div>
-
     </div>
 
 
@@ -148,24 +151,6 @@
     <!-- Path to your app js-->
     <script type="text/javascript" src="my-app.js"></script>
     <script>
-        // $(document).on("pageinit", "#todoPage", function () {
-        //     $('.userInfo').on('click', function () {
-        //         console.log('todo')
-        //     })
-        // });
-        function viewModel() {
-            var self = this;
-            self.userInfoList = ko.observableArray(
-                [
-                    { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" },
-                    { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" },
-                    { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" },
-                    { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" }
-                ]
-            )
-        }
-        ko.applyBindings(new viewModel(), document.getElementById('todoPage'));
-
 
 
     </script>

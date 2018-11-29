@@ -1,11 +1,4 @@
-
-    .detailHeader {
-        background: #0982FE !important;
-        border-top-width: 0px !important;
-        border-bottom-width: 0px !important;
-    }
-
-    .returnBtn {
+   .returnBtn {
         position: absolute;
         width: 40px;
         left: 10px;
@@ -18,25 +11,19 @@
         height: auto;
     }
 
+    #detailPage .infoHead {
+        padding: 0;
+    }
 
     .infoContainer {
-        background-color: white;
-        padding: 0 10px 5px 10px;
-        margin-bottom: 10px;
-    }
-
-    .infoHead {
-        padding-top:10px;
-        padding-bottom: 10px;
-    }
-
-    .infoContent {
-        padding: 5px 0 5px 13px;
+        padding: 0 10px 0 10px;
     }
 
     .infoFoot {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: unset;
+        -webkit-box-pack: unset;
     }
 
     .showMore {
@@ -139,9 +126,6 @@
         bottom: 6px;
         ;
     }
-
-
-
 
     .attrKey {
         font-size: 0.7em;
