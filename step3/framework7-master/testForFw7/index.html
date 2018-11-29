@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#2196f3">
+  <!-- Your app title -->
+  <title>My App</title>
+  <!-- Path to Framework7 Library CSS -->
+  <link rel="stylesheet" href="../packages/core/css/framework7.min.css">
+  <!-- Path to your custom app styles-->
+  <link rel="stylesheet" href="my-app.css">
+</head>
+
+<body>
+  <!-- App root element -->
+  <div id="app">
+    <!-- Statusbar overlay -->
+    <div class="statusbar"></div>
+
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+      <!-- Initial Page, "data-name" contains page name -->
+      <div data-name="home" class="page">
+
+        <!-- Top Navbar -->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="title">Awesome App</div>
+          </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+          <div class="toolbar-inner">
+            <!-- Toolbar links -->
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
+          </div>
+        </div>
+
+        <!-- Scrollable page content -->
+        <div class="page-content">
+          <p>Page content goes here</p>
+          <!-- Link to another page -->
+          <a href="/about/">About app</a>
+
+          <div class="block-title">List View Accordion</div>
+          <div class="list accordion-list">
+            <ul>
+              <li class="accordion-item">
+                <a href="#" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Item 1</div>
+                  </div>
+                </a>
+                <div class="accordion-item-content">
+                  <div class="block">
+                    <p>Item 1 content. Lorem ipsum dolor sit amet...</p>
+                  </div>
+                </div>
+              </li>
+              <li class="accordion-item">
+                <a href="#" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Item 2</div>
+                  </div>
+                </a>
+                <div class="accordion-item-content">
+                  <div class="block">
+                    <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                  </div>
+                </div>
+              </li>
+              ...
+            </ul>
+          </div>
+          <!-- Separate collapsibles - omit "accordion-list" class-->
+          <div class="block-title">Separate Collapsibles</div>
+          <div class="list">
+            <ul>
+              <li class="accordion-item">
+                <a href="#" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Item 1</div>
+                  </div>
+                </a>
+                <div class="accordion-item-content">
+                  <div class="block">
+                    <p>Item 1 content. Lorem ipsum dolor sit amet...</p>
+                  </div>
+                </div>
+              </li>
+              <li class="accordion-item">
+                <a href="#" class="item-content item-link">
+                  <div class="item-inner">
+                    <div class="item-title">Item 2</div>
+                  </div>
+                </a>
+                <div class="accordion-item-content">
+                  <div class="block">
+                    <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+                  </div>
+                </div>
+              </li>
+              ...
+            </ul>
+          </div>
+          <!-- Custom Accordion -->
+          <div class="block-title">Custom Accordion</div>
+          <div class="block accordion-list custom-accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-toggle">
+                <i class="icon icon-plus">+</i>
+                <i class="icon icon-minus">-</i>
+                <span>Item 1</span>
+              </div>
+              <div class="accordion-item-content">
+                <p>Item 1 content. Lorem ipsum dolor sit amet...</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-item-toggle">
+                <i class="icon icon-plus">+</i>
+                <i class="icon icon-minus">-</i>
+                <span>Item 2</span>
+              </div>
+              <div class="accordion-item-content">
+                <p>Item 2 content. Lorem ipsum dolor sit amet...</p>
+              </div>
+            </div>
+            ...
+          </div>
+
+          <div class="block">
+            <p>
+              <a class="ac-1" href="#">One group, three buttons</a>
+            </p>
+            <p>
+              <a class="ac-2" href="#">One group, title, three buttons</a>
+            </p>
+            <p>
+              <a class="ac-3" href="#">Two groups</a>
+            </p>
+            <p>
+              <a class="ac-4" href="#">Three groups</a>
+            </p>
+            <p>
+              <a class="ac-5" href="#">With callbacks on click</a>
+            </p>
+            <p>
+              <a class="ac-6" href="#">Actions grid</a>
+            </p>
+          </div>
+          <div class="block">
+            <div class="row">
+              <button class="button col">Button</button>
+              <button class="button button-big col">Button</button>
+              <button class="button button-small col">Button</button>
+            </div>
+          </div>
+
+          <div class="block-title">Default setup</div>
+          <div class="list no-hairlines-md">
+            <ul>
+              <li>
+                <div class="item-content item-input">
+                  <div class="item-inner">
+                    <div class="item-input-wrap">
+                      <input type="text" placeholder="Your birth date" readonly="readonly" id="demo-calendar-default" />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-header">card-header</div>
+            <div class="card-content card-content-padding">card-content</div>
+            <div class="card-footer">card-footer</div>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" />
+            <i class="icon icon-checkbox"></i>checkbox
+          </label>
+
+          <div class="list">
+            <ul>
+              <li>
+                <label class="item-checkbox item-content">
+                  <input type="checkbox" />
+                  <i class="icon icon-checkbox"></i>
+                  <div class="item-inner">
+                    <div class="item-title">Books</div>
+                  </div>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="chip">
+            <div class="chip-media">
+              <img src="http://lorempixel.com/100/100/people/9/">
+            </div>
+            <div class="chip-label">Jane Doe</div>
+            <a href="#" class="chip-delete"></a>
+          </div>
+
+          <div class="chip chip-outline">
+            <div class="chip-label">Outline Chip</div>
+            <a class="delete"></a>
+          </div>
+
+          <div class="data-table">
+            <table>
+              <thead>
+                <tr>
+                  
+                </tr>
+              </thead>
+            </table>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Path to Framework7 Library JS-->
+  <script type="text/javascript" src="../packages/core/js/framework7.min.js"></script>
+  <!-- Path to your app js-->
+  <script type="text/javascript" src="my-app.js"></script>
+</body>
+
+</html>
