@@ -19,13 +19,13 @@
     <style>
         @media screen and (min-width: 375px) {
             .userInfoSize {
-                width: 96%;
+                width: 98%;
             }
         }
 
         @media screen and (min-width: 1024px) {
             .userInfoSize {
-                width: 48%;
+                width: 49%;
             }
         }
     </style>
@@ -54,17 +54,17 @@
                     <div class="toolbar-inner">
                         <a href="#tab-1" class="tab-link tab-link-active">
                             <!-- Different icons for iOS and MD themes -->
-                            <i class="icon f7-icons ios-only">data_fill</i>
+                            <i class="icon f7-icons ios-only color-blue">data_fill</i>
                             <i class="icon material-icons md-only">data</i>
                             <!-- Label text -->
                             <span class="tabbar-label no-shadow">todo</span>
                         </a>
                         <a href="#tab-2" class="tab-link">
-                            <i class="icon f7-icons ios-only">favorites</i>
+                            <i class="icon f7-icons ios-only color-gray">favorites</i>
                             <span class="tabbar-label no-shadow">approved</span>
                         </a>
                         <a href="#tab-3" class="tab-link">
-                            <i class="icon f7-icons ios-only">person_fill</i>
+                            <i class="icon f7-icons ios-only color-gray">person</i>
                             <i class="icon material-icons md-only">person</i>
                             <span class="tabbar-label no-shadow">me</span>
                         </a>
@@ -76,11 +76,12 @@
                         <div class="ptr-arrow"></div>
                     </div>
                     <div class="cards cardsScrollable" data-bind="foreach:{data: userInfoList, as: 'userInfo'}">
-                        <div class="card" data-bind="click: $parent.showDetailPage(userInfo.id)">
+                        <div class="card userInfoSize borderSize" data-bind="click: $parent.showDetailPage(userInfo.id)">
                             <div class="card-content userInfo">
                                 <div class="showDetail">
                                     <div class="enterDetail">
-                                        <img src="images/enter.png" class="arrowIcon">
+                                        <!-- <img src="images/enter.png" class="arrowIcon"> -->
+                                        <i class="icon f7-icons ios-only color-gray">chevron_right</i>
                                     </div>
                                 </div>
                                 <div class="infoTag">

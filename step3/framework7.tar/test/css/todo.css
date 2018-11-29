@@ -5,7 +5,11 @@
             background: #067bff;
         }
 
-
+        #todoPage .borderSize {
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
         
         .dateIcon {
             float: left;
@@ -63,7 +67,7 @@
 
         .infoTag {
             box-sizing:border-box;
-            margin:2% 0 2% 0;
+            margin:3% 0 3% 0;
             width: 40%;
         }
 
