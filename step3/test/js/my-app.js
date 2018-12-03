@@ -11,11 +11,10 @@ var app = new Framework7({
     routes: [
         {
             name: 'about',
-            path: '/about/:id',
+            path: '/about/',
             url: './detailPage.html',
             on: {
                 pageInit: function (e) {
-                    console.log(this);
                     var params = app.utils.parseUrlQuery(this.url);
                     var id = params.id;
                     var $$ = Dom7;
@@ -59,8 +58,8 @@ var app = new Framework7({
 });
 
 var $$ = Dom7;
-
 function viewModel() {
+    console.log('data-bind');
     var self = this;
     self.userInfoList = ko.observableArray(
         [
@@ -70,14 +69,12 @@ function viewModel() {
             { id: "CRE2018-0514", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" }
         ]
     )
-    self.showDetailPage = function (data, e) {
-        console.log(e)
+    self.showDetailPage = function (e) {
         app.router.navigate({
             name: 'about',
             query: {
-                id: data,
+                id: this.id,
             },
-            params: { id: data },
         });
     }
 }
@@ -87,7 +84,6 @@ ko.applyBindings(viewModel, document.getElementById('todoPage'));
 // Pull to refresh content
 var $ptrContent = $$('.ptr-content');
 $ptrContent.on('ptr:refresh', function (e) {
-    console.log('pull to refresh');
     setTimeout(function () {
         for (let i = 0; i < 5; i++) {
             viewModel.userInfoList.push(
@@ -104,31 +100,6 @@ $ptrContent.on('ptr:refresh', function (e) {
 
 
 var view = app.view.create('.view-main');
-
-$$(document).on("page:mounted", function (e) {
-    console.log(e.detail.$pageEl[0].id);
-    console.log('page mounted');
-});
-$$(document).on("page:init", function (e) {
-    console.log('page init');
-});
-$$(document).on("page:reinit", function (e) {
-    console.log('page reinit');
-});
-$$(document).on("page:beforein", function (e) {
-    console.log('page brforein');
-});
-$$(document).on("page:afterin", function (e) {
-    console.log('page afterin');
-});
-$$(document).on("page:afterout", function (e) {
-    console.log('page afterout');
-});
-$$(document).on("page:beforeremove", function (e) {
-    console.log('page beforeremove');
-});
-
-
 var allowInfinite = true;
 
 // Last loaded index
@@ -141,22 +112,15 @@ var maxItems = 200;
 var itemsPerLoad = 20;
 app.infiniteScroll.create('.infinite-scroll-content')
 // Attach 'infinite' event handler
-$$('.infinite-scroll-content').on('infinite', function () {
-    // Exit, if loading in progress
+$$('.infinite-scroll-content').on('infinite', function (e) {
     if (!allowInfinite) return;
-
-    // Set loading flag
     allowInfinite = false;
-
     // Emulate 1s loading
     setTimeout(function () {
-        // Reset loading flag
         allowInfinite = true;
 
         if (lastItemIndex >= maxItems) {
-            // Nothing more to load, detach infinite scroll events to prevent unnecessary loadings
             app.infiniteScroll.destroy('.infinite-scroll-content');
-            // Remove preloader
             $$('.infinite-scroll-preloader').remove();
             return;
         }
@@ -171,3 +135,26 @@ $$('.infinite-scroll-content').on('infinite', function () {
         }
     }, 1000);
 });
+
+// $$(document).on("page:mounted", function (e) {
+//     console.log(e.detail.$pageEl[0].id);
+//     console.log('page mounted');
+// });
+// $$(document).on("page:init", function (e) {
+//     console.log('page init');
+// });
+// $$(document).on("page:reinit", function (e) {
+//     console.log('page reinit');
+// });
+// $$(document).on("page:beforein", function (e) {
+//     console.log('page brforein');
+// });
+// $$(document).on("page:afterin", function (e) {
+//     console.log('page afterin');
+// });
+// $$(document).on("page:afterout", function (e) {
+//     console.log('page afterout');
+// });
+// $$(document).on("page:beforeremove", function (e) {
+//     console.log('page beforeremove');
+// });

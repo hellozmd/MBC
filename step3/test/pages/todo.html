@@ -6,77 +6,58 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test1</title>
-    <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/todo.css">
-    <link rel="stylesheet" href="css/framework7.min.css">
-    <link rel="stylesheet" href="./framework7-icons-master/css/framework7-icons.css">
+    <title>Todo</title>
+    <link rel="stylesheet" href="../css/todo.css">
+    <link rel="stylesheet" href="../css/framework7.min.css">
+    <link rel="stylesheet" href="../framework7-icons-master/css/framework7-icons.css">
     <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="my-app.css">
+    <link rel="stylesheet" href="../css/my-app.css">
     <!-- <link rel="stylesheet" href="css/detailPage.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
 
-    <style>
-        @media screen and (min-width: 375px) {
-            .userInfoSize {
-                width: 98%;
-            }
-        }
-
-        @media screen and (min-width: 1024px) {
-            .userInfoSize {
-                width: 49%;
-            }
-        }
-    </style>
 </head>
-
 <body>
     <div id="app">
         <div class="statusbar"></div>
-
         <div class="view view-main">
             <div data-name="home" class="page" id="todoPage">
                 <div class="navbar navbarColor">
                     <div class="navbar-inner">
                         <div class="left">
                         </div>
-                        <div class="title">Todo</div>
+                        <div class="title pageTitle">Todo</div>
                         <div class="right">
-                            <a class="link" href="#">
-                                <i class="icon f7-icons color-white ios-only">menu</i>
+                            <a class="right link icon-only">
+                                <i class="icon f7-icons color-white ios-only memuIcon">menu</i>
                             </a>
                         </div>
                     </div>
                 </div>
-
                 <div class="toolbar tabbar-labels">
                     <div class="toolbar-inner">
-                        <a href="#tab-1" class="tab-link tab-link-active">
-                            <!-- Different icons for iOS and MD themes -->
-                            <i class="icon f7-icons ios-only color-blue">data_fill</i>
+                        <a href="#" class="tab-link tab-link-active">
+                            <i class="icon f7-icons ios-only">data_fill</i>
                             <i class="icon material-icons md-only">data</i>
-                            <!-- Label text -->
-                            <span class="tabbar-label no-shadow">todo</span>
+                            <span class="tabbar-label no-shadow">Todo</span>
                         </a>
-                        <a href="#tab-2" class="tab-link">
-                            <i class="icon f7-icons ios-only color-gray">favorites</i>
-                            <span class="tabbar-label no-shadow">approved</span>
+                        <a href="#" class="tab-link">
+                            <i class="icon f7-icons ios-only">favorites</i>
+                            <span class="tabbar-label no-shadow">Approved</span>
                         </a>
-                        <a href="#tab-3" class="tab-link">
-                            <i class="icon f7-icons ios-only color-gray">person</i>
+                        <a href="#" class="tab-link">
+                            <i class="icon f7-icons ios-only">person</i>
                             <i class="icon material-icons md-only">person</i>
-                            <span class="tabbar-label no-shadow">me</span>
+                            <span class="tabbar-label no-shadow">Me</span>
                         </a>
                     </div>
                 </div>
-                <div class="page-content ptr-content infinite-scroll-content" data-ptr-distance="55">
+                <div class="page-content ptr-content" data-ptr-distance="55">
                     <div class="ptr-preloader">
                         <div class="preloader"></div>
                         <div class="ptr-arrow"></div>
                     </div>
-                    <div class="cards cardsScrollable" data-bind="foreach:{data: userInfoList, as: 'userInfo'}">
-                        <div class="card userInfoSize borderSize" data-bind="click: $parent.showDetailPage(userInfo.id)">
+                    <div class="cards cardsRWD" data-bind="foreach:{data: userInfoList, as: 'userInfo'}">
+                        <div class="card userInfoSize borderSize" data-bind="click: $parent.showDetailPage">
                             <div class="card-content userInfo">
                                 <div class="showDetail">
                                     <div class="enterDetail">
@@ -88,13 +69,11 @@
                                     <div class="infoValue" data-bind="text: userInfo.id">
                                     </div>
                                     <div class="infoKey">
-                                        <div class="dateIconBox">
-                                            <img src="images/dataIcon.png" class="dateIcon">
-                                        </div>
-                                        <div style="float: left;" data-bind="text: userInfo.date"></div>
+                                        <i class="f7-icons dateIcon">calendar</i>
+                                        <span data-bind="text: userInfo.date"></span>
                                     </div>
                                 </div>
-                                <div class="infoTag">
+                                <div class="infoTag userStatusBox">
                                     <div class="userStatus" data-bind="text: userInfo.status">
                                     </div>
                                 </div>
@@ -130,31 +109,14 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-                    
-                    <div class="preloader infinite-scroll-preloader"></div>
-
-
-
-
-
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="my-app.js"></script>
+    
+    <script type="text/javascript" src="../js/framework7.min.js"></script>
+    <script type="text/javascript" src="../js/my-app.js"></script>
     <script>
-
-
     </script>
 </body>
-
 </html>

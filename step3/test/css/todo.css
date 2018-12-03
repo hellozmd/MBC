@@ -1,34 +1,43 @@
-        .headBar {
+
+        @media screen and (min-width: 375px) {
+            .userInfoSize {
+                width: 94%;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .userInfoSize {
+                width: 49%;
+            }
         }
 
         #app .navbar{
-            background: #067bff;
+            /* background: #067bff; */
+            background: linear-gradient(to bottom, #067bff, #59aaf7);
+        }
+
+        #app .menuIcon {
+            font-size: xx-large;
+            margin-right: 10px;
+        }
+
+        .pageTitle {
+            color: white;
         }
 
         #todoPage .borderSize {
             margin: 0 auto;
             margin-top: 10px;
-            margin-bottom: 10px;
         }
         
-        .dateIcon {
-            float: left;
-            width: 13px;
-            height: 13px;
+        #todoPage .dateIcon {
+            font-size: inherit;
         }
-
 
         .pageTag {
             /* text-align: center; */
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .pageIconBox {
-            width: 120px;
-            display: flex;
             justify-content: center;
             align-items: center;
         }
@@ -42,13 +51,10 @@
             color: rgb(06, 123, 255) !important;
         }
 
-        .contentBody {
-            overflow:scroll !important;
-            padding: 0 !important;
-        }
-
-        #todoPage .cardsScrollable {
-            display: inline;
+        #todoPage .cardsRWD {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
 
         #todoPage .userInfo {
@@ -59,7 +65,7 @@
             position: relative;
             text-align: left;
             border-left-style: solid;
-            border-left-width: 0.4em;
+            border-left-width: 8px;
             border-left-color: red;
             border-radius: 0.3em;
             box-shadow: 0.1em 0.1em 0.3em #888888;
@@ -67,7 +73,7 @@
 
         .infoTag {
             box-sizing:border-box;
-            margin:3% 0 3% 0;
+            margin:2% 0 2% 0;
             width: 40%;
         }
 
@@ -77,39 +83,28 @@
             top: 43%;
         }
 
-        .enterDetail {
-            /*position: absolute;*/
-        }
-
-        .arrowIcon {
-            width: 40px;
-            height: 30px;
-        }
-
         .infoKey {
             font-size: 0.5em;
             color: #585656a4;
         }
 
         .infoValue {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+            font-family: serif !important;
             font-size: 1.3em;
             word-wrap: break-word;
         }
 
+        .userStatusBox {
+            align-items: flex-end;
+            display: flex;
+            flex-direction: column;
+        }
+
         .userStatus {
-            float:right;
-            background-color: rgb(48, 145, 201);
+            text-align: center;
+            background-color: rgb(56, 119, 235);
             font-size: 0.1em;
-            border-radius: 1em;
+            border-radius: 25px;
             color:white;
-            padding: 5px;
-        }
-
-        .pageIcon {
-            width: 20%;
-        }
-
-        a {
-            color: black !important;
+            padding: 3px 10px 3px 10px;
         }

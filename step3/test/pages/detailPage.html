@@ -5,20 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    <link rel="stylesheet" href="css/framework7.min.css">
-    <link rel="stylesheet" href="my-app.css">
-    <title>Document</title>
+    <title>detail</title>
 </head>
 
 <body>
     <div class="page" id="detailPage">
-            <link rel="stylesheet" href="css/detailPage.css">
-
+            <link rel="stylesheet" href="../css/detailPage.css">
             <div class="navbar">
                 <div class="navbar-inner">
                     <div class="left">
-                        <a href="./todo.html" class="link">
+                        <a href="#" class="link returnIcon">
                             <!-- <img src="images/backIcon.png" class="returnIcon"> -->
                             <i class="icon f7-icons ios-only color-white">chevron_left</i>
                         </a>
@@ -57,13 +53,12 @@
                         </div>
                         <div class="card-footer infoFoot">
                             <div class="showMore">
-                                <img src="images/enter.png" class="moreIcon">
+                                <img src="../images/enter.png" class="moreIcon">
                             </div>
                             <div class="showMoreInfo">
                                 More
                             </div>
                         </div>
-
                     </div>
 
                     <div class="card infoContainer">
@@ -97,7 +92,7 @@
                         </div>
                         <div class="card-footer infoFoot">
                             <div class="showMore">
-                                <img src="images/enter.png" class="moreIcon">
+                                <img src="../images/enter.png" class="moreIcon">
                             </div>
                             <div class="showMoreInfo">
                                 More
@@ -112,10 +107,10 @@
                             </div>
                         </div>
                         <div class="card-content docList leftInterval infoBorderLine" data-bind="foreach: supportingDoc">
-                            <div class="docTab">
+                            <div class="docTab bottomLine">
                                 <div class="docInfo">
                                     <div class="docIconBox">
-                                        <img src="images/DOC.png" class="docIcon">
+                                        <img src="../images/DOC.png" class="docIcon">
                                     </div>
                                     <div>
                                         <div class="docName attrValue" data-bind="text: docName"></div>
@@ -124,26 +119,25 @@
                                 </div>
                                 <div class="downloadBox">
                                     <div>
-                                        <img src="images/DOWNLOAD.png" class="downloadIcon">
+                                        <img src="../images/DOWNLOAD.png" class="downloadIcon">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer infoFoot">
+                        <div class="card-footer infoFoot docFootOffset">
                             <div class="showMore">
-                                <img src="images/enter.png" class="moreIcon">
+                                <img src="../images/enter.png" class="moreIcon">
                             </div>
                             <div class="showMoreInfo">
                                 More
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
     </div>
     <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/routes.js"></script>
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script src="detailPage.js"></script>
 </body>
