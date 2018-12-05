@@ -23,15 +23,7 @@ Framework7.use(Framework7Vue)
 // Init App
 new Vue({
   el: '#app',
-  //template: '<app/>',
-  data() {
-    return {
-      f7params: {
-        routes: routes,
-        name: 'My app',
-      }
-    }
-  },
+  template: '<app/>',
   // Register App Component
   components: {
     app: App

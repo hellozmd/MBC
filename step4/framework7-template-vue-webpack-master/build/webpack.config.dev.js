@@ -13,11 +13,14 @@ function resolvePath(dir) {
 module.exports = {
   mode: 'development',
   entry: [
-    './src/app.js'
+    './src/app.js',
+	'./src/framework7.min.js',
+	'./src/framework7-vue.min.js',
+	'./src/routes.js',
   ],
   output: {
     path: resolvePath('www'),
-    filename: 'app.js',
+    filename: 'bundle.js',
     publicPath: ''
   },
   resolve: {
