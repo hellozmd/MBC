@@ -7,6 +7,9 @@ import Framework7 from 'framework7/framework7.esm.bundle.js';
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue/framework7-vue.esm.bundle.js';
 
+// Import vuex store
+import store from './store/store.js';
+
 // Import F7 Styles
 import Framework7Styles from 'framework7/css/framework7.css';
 

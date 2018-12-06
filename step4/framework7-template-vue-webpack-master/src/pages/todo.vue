@@ -5,25 +5,19 @@
                 Todo
             </f7-nav-title>
             <f7-nav-right>
-                <f7-link panel-open="right">
-                    <f7-icon icon="icon-menu">menu</f7-icon>
-                </f7-link>
+                <f7-link class="menu-offset">
+                    <f7-icon color="white" ios="f7:menu" md="material:menu" size="30px">
+                </f7-icon>
+        </f7-link>
             </f7-nav-right>
         </f7-navbar>
-        <f7-toolbar tabbar>
-            <f7-link tab-link="#tab-1" tab-link-active>
-                <f7-icon ios="f7:data" md="material:data-fill" size="20px"></f7-icon>
-                <!--<span class="tabbar-label no-shadow">Todo</span> -->
-            </f7-link>
-            <f7-link tab-link="#tab-2">
-                <f7-icon ios="f7:data" md="material:data-fill" size="20px"></f7-icon>
-            </f7-link>
-            <f7-link tab-link="#tab-3">
-                <f7-icon ios="f7:data" md="material:data-fill" size="20px"></f7-icon>
-            </f7-link>
+        <f7-toolbar tabbar labels>
+            <f7-link tab-link="#todo" tab-link-active text="Todo" icon-ios="f7:data_fill" icon-md="material:data"></f7-link>
+            <f7-link tab-link="#approval" text="Approval" icon-ios="f7:favorites" icon-md="material:favorites"></f7-link>
+            <f7-link tab-link="#me" text="Me" icon-ios="f7:person" icon-md="material:person"></f7-link>
         </f7-toolbar>
         <div class="cards cards-rwd">
-            <f7-card class=" userinfo-size" v-for="userInfo in userInfoList">
+            <f7-card class=" userinfo-size" v-for="userInfo in userInfoList" :key="userInfo.id">
                 <div class="user-info" @click="showDetail(userInfo, $event)">
                 <div class="info-tag">
                     <div class="info-value">{{userInfo.id}}</div>
@@ -59,7 +53,7 @@
 </template>
 
 <script>
-    module.exports = {
+    export default {
         data: function () {
             return {
                 userInfoList: [
@@ -73,8 +67,6 @@
         },
         methods: {
                 showDetail: function (data, event) {
-                    console.log(data.id);
-                    console.log(this.$f7router);
                     this.$f7router.navigate('/detail/' + data.id, {
                         query: {
                             cid: data.id,
@@ -93,7 +85,8 @@
                 }
         }
     }   
-    require ('../css/todo.css'); 
+    import '../css/todo.css';
+    import '../css/framework7-icons.css'; 
 </script>
 <style scoped>
 </style>

@@ -1,95 +1,98 @@
-
-        @media screen and (min-width: 375px) {
-            .userinfo-size {
-                width: 94%;
-            }
+    @media screen and (min-width: 375px) {
+        .userinfo-size {
+            width: 94%;
         }
+    }
 
-        @media screen and (min-width: 1024px) {
-            .userinfo-size {
-                width: 47%;
-            }
+    @media screen and (min-width: 1024px) {
+        .userinfo-size {
+            width: 47%;
         }
+    }
 
-        #main-view .navbar{
-            background: linear-gradient(to bottom, #067bff, #59aaf7);
-        }
+    #main-view .navbar{
+        background: linear-gradient(to bottom, #067bff, #59aaf7);
+    }
 
-        #todo .cards-rwd {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+    .menu-offset {
+        margin-right: 10px;
+    }
 
-        .page-title {
-            color: white;
-        }
+    #todo .cards-rwd {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        #todo .user-info {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            flex-flow: wrap;
-            position: relative;
-            text-align: left;
-            border-left-style: solid;
-            border-left-width: 8px;
-            border-left-color: red;
-            border-radius: 0.3em;
-            box-shadow: 0.1em 0.1em 0.3em #888888;
-        }
+    .page-title {
+        color: white;
+    }
 
-        .info-tag {
-            box-sizing:border-box;
-            margin:2% 0 2% 0;
-            width: 40%;
-        }
+    #todo .user-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        position: relative;
+        text-align: left;
+        border-left-style: solid;
+        border-left-width: 8px;
+        border-left-color: red;
+        border-radius: 0.3em;
+        box-shadow: 0.1em 0.1em 0.3em #888888;
+    }
 
-        .show-detail {
-            position: absolute;
-            right: 5px;
-            top: 43%;
-        }
+    .info-tag {
+        box-sizing:border-box;
+        margin:2% 0 2% 0;
+        width: 40%;
+    }
 
-        .info-key {
-            font-size: 0.5em;
-            color: #585656a4;
-        }
+    .show-detail {
+        position: absolute;
+        right: 5px;
+        top: 43%;
+    }
 
-        .info-value {
-            font-family: serif !important;
-            font-size: 1.3em;
-            word-wrap: break-word;
-        }
+    .info-key {
+        font-size: 0.5em;
+        color: #585656a4;
+    }
 
-        .user-status-box {
-            align-items: flex-end;
-            display: flex;
-            flex-direction: column;
-        }
+    .info-value {
+        font-family: serif !important;
+        font-size: 1.3em;
+        word-wrap: break-word;
+    }
 
-        .user-status {
-            text-align: center;
-            background-color: rgb(56, 119, 235);
-            font-size: 0.1em;
-            border-radius: 25px;
-            color:white;
-            padding: 3px 10px 3px 10px;
-        }
+    .user-status-box {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user-status {
+        text-align: center;
+        background-color: rgb(56, 119, 235);
+        font-size: 0.1em;
+        border-radius: 25px;
+        color:white;
+        padding: 3px 10px 3px 10px;
+    }
 /* 
-        #app .menuIcon {
-            font-size: xx-large;
-            margin-right: 10px;
-        }
+    #app .menuIcon {
+        font-size: xx-large;
+        margin-right: 10px;
+    }
 
-        #todoPage .borderSize {
-            margin: 0 auto;
-            margin-top: 10px;
-        }
-        
-        #todoPage .dateIcon {
-            font-size: inherit;
-        }
+    #todoPage .borderSize {
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    
+    #todoPage .dateIcon {
+        font-size: inherit;
+    }
 
-         */
+        */

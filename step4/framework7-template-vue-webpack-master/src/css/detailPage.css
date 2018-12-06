@@ -20,6 +20,10 @@
         min-height: 34px;
     }
 
+    .backbtn-offset {
+        margin-left: 15px;
+    }
+
     .show-more {
         position: relative;
         text-align: center;
@@ -50,15 +54,8 @@
     .top-line {
         border-top-style: solid;
         border-top-width: 1px;
-        border-top-color: rgb(212, 209, 209);
+        border-top-color: #e1e1e1;
         padding-top: 10px;
-    }
-
-    .bottom-line {
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        border-bottom-color: #e1e1e1;
-        padding-bottom: 10px;
     }
 
     .info-headTitle {
@@ -87,7 +84,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding-top: 10px;
     }
 
     .doc-info {
