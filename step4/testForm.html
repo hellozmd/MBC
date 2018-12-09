@@ -17,22 +17,31 @@
                 {{index}} {{book}}
             </li>
         </ul>
-        <input type="input" name="testInput" v-focus/>
+        <input type="input" name="testInput" v-focus />
         <div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
         {{msg2 | test01('aaaa', 'bbbb')}}
-        <input v-model="msg2" type="input"/>
+        <input v-model="msg2" type="input" />
         <martin name="hi component martin">ssss</martin>
+        <alert-box>hey , test slot</alert-box>
     </div>
     <script>
         Vue.component('martin', {
             props: ['name'],
             template: '<h3>{{name}}</h3>'
         })
+        Vue.component('alert-box', {
+            template: `
+    <div class="demo-alert-box">
+      <strong>Error!</strong>
+      <slot></slot>
+    </div>
+  `
+        })
         Vue.directive('demo', {
             bind: function (el, binding, vnode) {
                 var s = JSON.stringify
                 el.innerHTML = '';
-                    
+
             }
         })
         Vue.directive('focus', {
@@ -46,7 +55,7 @@
             }
         });
         Vue.filter('test01', function (value, arg1, arg2) {
-            return arg1 + '' + value + arg2; 
+            return arg1 + '' + value + arg2;
         })
         var app = new Vue({
             el: '#app',

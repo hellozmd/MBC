@@ -1,5 +1,5 @@
 import HomePage from './pages/home.vue';
-import AboutPage from './pages/todo.vue';
+import TodoPage from './pages/todo.vue';
 import FormPage from './pages/form.vue';
 import DynamicRoutePage from './pages/dynamic-route.vue';
 import NotFoundPage from './pages/not-found.vue';
@@ -7,6 +7,7 @@ import NotFoundPage from './pages/not-found.vue';
 import PanelLeftPage from './pages/panel-left.vue';
 import PanelRightPage from './pages/panel-right.vue';
 import detailPage from './pages/detailPage.vue';
+import ContactsListComponent from 'framework7/components/contacts-list/contacts-list';
 
 export default [
   {
@@ -22,8 +23,10 @@ export default [
     component: PanelRightPage,
   },
   {
-    path: '/about/',
-    component: AboutPage,
+    path: '/todo/',
+    component: TodoPage,
+    on: {
+    }
   },
   {
     path: '/form/',

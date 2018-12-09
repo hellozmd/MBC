@@ -26,6 +26,7 @@ Framework7.use(Framework7Vue)
 // Init App
 new Vue({
   el: '#app',
+  store,
   template: '<app/>',
   // Register App Component
   components: {

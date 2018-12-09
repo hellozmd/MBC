@@ -1,5 +1,9 @@
 <template>
-    <f7-page id="todo" ptr @ptr:refresh="loadMore">
+    <f7-page id="todo" ptr @ptr:refresh="loadMorePtr"
+        infinite
+        :infinite-distance="30"
+        :infinite-preloader="this.$store.state.infiniteStatus"
+        @infinite="loadMoreInScrollBottom">
         <f7-navbar>
             <f7-nav-title class="page-title">
                 Todo
@@ -53,6 +57,12 @@
 </template>
 
 <script>
+    function computeInfinite(self) {
+        let cardLength = self.Dom7('.cards')[0].scrollHeight;
+        if(cardLength > self.$f7.height - 88)
+            self.$store.commit('setInfiniteStatus', true);
+        else self.$store.commit('setInfiniteStatus', false)
+    }
     export default {
         data: function () {
             return {
@@ -62,27 +72,59 @@
                     { id: "CRE2018-0513", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" },
                     { id: "CRE2018-0514", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition" }
                 ],
-                
+                allowInfinite: true,
+                showPreloader: false,
             }
         },
         methods: {
-                showDetail: function (data, event) {
-                    this.$f7router.navigate('/detail/' + data.id, {
-                        query: {
-                            cid: data.id,
-                        }
+            showDetail: function (data, event) {
+                        console.log(this.$store);
+                this.$f7router.navigate('/detail/' + data.id, {
+                    query: {
+                        cid: data.id,
+                    }
+                });
+            },
+            loadMorePtr: function (event, done) {
+                setTimeout(() => {
+                    this.loadDataMock();
+                done();
+                }, 2000)
+                setTimeout(() => {
+                    computeInfinite(this);
+                }, 2200)
+            },
+            loadMoreInScrollBottom: function () {
+                const self = this;
+                if(!self.allowInfinite) return;
+                    self.allowInfinite = false;
+                setTimeout( () => {
+                    if(self.userInfoList.length > 50) {
+                        self.$store.commit('setInfiniteStatus', true); return;
+                    }
+                    self.loadDataMock();
+                    self.allowInfinite = true;
+                    computeInfinite(self);
+                }, 1000)
+            },
+            loadDataMock: function() {
+                for(let i = 0; i < 4; i++) {
+                    let genId = new Date().toJSON() + i;
+                    this.userInfoList.push({
+                        id: genId, date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition"
                     });
-                },
-                loadMore: function (event, done) {
-                    console.log(this.userInfoList);
-                    setTimeout(() => {
-                        for(let i = 0; i < 4; i++)
-                            this.userInfoList.push({
-                                id: "CRE2018-0514", date: "2018-11-18", status: "Pendeing for FINCON", totalAmount: "2500001", unbudgeted: "----", applicant: "HELEN TONG", revenueMode: "Acquisition"
-                            });
-                    done();
-                    }, 2000)
                 }
+            },
+        },
+        mounted: function() {
+            let that = this;
+            computeInfinite(that);
+            that.$f7router.app.on('orientationchange', function(e, page) {
+                if(that.$el.id === 'todo') {
+                    console.log(11);
+                    computeInfinite(that);
+                }
+            })
         }
     }   
     import '../css/todo.css';
